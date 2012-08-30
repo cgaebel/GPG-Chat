@@ -11,10 +11,10 @@ import Util.Prelewd
 
 -- | Entry point
 main :: IO ()
-main = putStr "> " >> hFlush stdout
-     >> getLine
-     >>= toLowerCase
-     <&> runCommand
+main = do putStr "> " >> hFlush stdout
+          input <- toLowerCase <$> getLine
+          runCommand input
+          main
 
 toLowerCase :: String -> String
 toLowerCase = fmap toLower
@@ -23,12 +23,11 @@ exit :: String
 exit = "exit"
 
 runCommand :: String -> IO ()
-runCommand s = iff (s == exit) (return ()) $ do
-            fromMaybe (putStrLn "Command not recognized") $ lookup s commands
-            main
+runCommand s = fromMaybe (putStrLn "Command not recognized") $ lookup s commands
 
 commands :: [(String, IO ())]
 commands = ("help", help)
+         : ("exit", exitSuccess)
          : $(genCommands $ fst <$> commandInfo)
 
 help :: IO ()

@@ -5,6 +5,7 @@ module Command ( genCommands
 
 import Language.Haskell.TH
 
+import Util.IO
 import Util.Prelewd
 
 -- | Generate a mapping from command names to functions
