@@ -1,6 +1,6 @@
 # Setting Up
 
-To build and run the game, you will need:
+To build and run the program, you will need:
 
  * Haskell
  * cabal
@@ -23,9 +23,9 @@ When the project has been successfully configured, it can be built with
 
 # Running
 
-After a successful build, the game can be run from
+After a successful build, the program can be run from
 
-    dist/build/Game2D/Game2D
+    dist/build/gpgchat/gpgchat
 
 # Documentation
 
