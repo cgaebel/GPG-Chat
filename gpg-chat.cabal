@@ -1,0 +1,21 @@
+Name:                GPG-Chat
+Version:             0.1
+Description:         Command line interface for encrypting/decrypting gpg interface and storing message history
+Category:            Games
+License-file:        LICENSE
+Author:              Ben Foppa
+Maintainer:          benjamin.foppa@gmail.com
+Build-Type:          Simple
+Cabal-Version:       >= 1.9.2
+
+Executable gpgchat
+    hs-source-dirs:    src/
+    Main-is:           Main.hs
+    GHC-Options:       -Wall -threaded -rtsopts=all -fllvm
+    Extensions:        TupleSections, TemplateHaskell, GeneralizedNewtypeDeriving, NoImplicitPrelude, BangPatterns
+
+    Build-Depends: 
+                    containers,
+                    template-haskell,
+                    QuickCheck >= 2,
+                    base
