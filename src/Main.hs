@@ -43,4 +43,4 @@ formatHelp :: Integer -> (String, String) -> String
 formatHelp columnWidth (cmd, dsc) = "\t" ++ pad columnWidth cmd ++ dsc ++ "\n"
 
 pad :: Integer -> String -> String
-pad len s = s ++ replicate (len - length s) ' '
+pad len s = s ++ replicate (fromIntegral len - length s) ' '
